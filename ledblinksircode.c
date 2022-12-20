@@ -18,20 +18,20 @@ void main()
 	clock_internal_enable();
 	gpio_init();
 	
-	while(1)
+	/*while(1)
 	{
 	if(sw==0)
 	{
 	*GPIOG_ODR^=(1<<13);
 	}
 	
-	}
-	
-	
-	
-	/*while(1){
-		//blink_led();
 	}*/
+	
+	
+	
+	while(1){
+		blink_led();
+	}
 }
 
 void clock_internal_enable()
@@ -50,8 +50,8 @@ void gpio_init()
 	
 	*GPIOG_PUPDR&=~(1<<27);//enabling no pull push for pin13
 	*GPIOG_PUPDR&=~(1<<26);//enabling no pull push for pin13
-	
-	//for switch
+}
+	/*for switch
 	*GPIOG_MODER |= (0<<swpinno);//enabling pin13 as ip
 	*GPIOG_MODER &= ~(0<<27);//enabling pin13 as i/p
 	*GPIOG_OTYPER &=~(1<<13);//making pin13 o/p type as push pull
@@ -62,7 +62,7 @@ void gpio_init()
 	*GPIOG_PUPDR&=~(1<<26);//enabling no pull push for pin13
 	
 	
-}
+}*/
 
 void blink_led(){
 	for(uint32 i=0;i<100000;i++)
