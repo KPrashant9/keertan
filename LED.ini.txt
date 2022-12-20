@@ -1,0 +1,149 @@
+Maximum & Minimum of an array:
+
+#include<stdio.h>
+
+int main()
+{
+    int a[50],i,n,min,max;
+
+    printf("Enter size of the array : ");
+    scanf("%d",&n);
+
+    printf("Enter elements in array : ");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+
+    min=max=a[0];
+    for(i=1; i<n; i++)
+    {
+         if(min>a[i])
+		  min=a[i];
+        if(max<a[i])
+          max=a[i];
+    }
+     printf("minimum of array is %d\n",min);
+     printf("maximum of array is %d",max);
+
+
+}
+
+
+Return a pointer from a function:
+
+#include<stdio.h>
+int fun();
+int main()
+{
+    int *res;
+    res=fun();
+    printf("%p",res);
+}
+
+int fun()
+{
+    static int p=9;
+    return &p;
+}
+
+
+Returning multiple values from a function:
+
+#include<stdio.h>
+
+struct new
+{
+    int m;
+    int y;
+}obj;
+
+int fun1(int a,int b);
+
+int main()
+{
+    int a=10;int b=20,res;
+    res=fun1(a,b);
+    if(a>b)
+    printf("%d %d",obj.m,obj.y);
+    else
+    printf("%d %d",obj.y,obj.m);
+
+}
+
+
+int fun1(int a,int b)
+{
+        obj.m=10;
+        obj.y=20;
+        if(a>b)
+        {
+            return a;
+            return b;}
+        else{
+            return b;
+            return a;}
+}
+
+
+To add N distances given in inch-feet system using structures:
+
+
+
+#include<stdio.h>
+
+struct distance
+{
+    int feet;
+    int inch;
+};
+
+int main()
+{
+
+    struct distance d1, d2, sum;
+
+    printf("Enter feet and inch of first distance: ");
+    scanf("%d%d", &d1.feet, &d1.inch);
+    printf("Enter feet and inch of second distance: ");
+    scanf("%d%d", &d2.feet, &d2.inch);
+
+    sum.inch = d1.inch + d2.inch;
+    sum.feet = d1.feet + d2.feet;
+
+    if(sum.inch>=12)
+    {
+        sum.feet += sum.inch/12;
+        sum.inch %= 12;
+    }
+    printf("Sum is %d' %d''", sum.feet, sum.inch);
+    return 0;
+}
+
+
+
+Area & perimeter of rectangle:
+
+#include <stdio.h>
+
+int main()
+{
+    float length, width, area, perimeter;
+
+    printf("Enter length of Rectangle");
+    scanf("%f", &length);
+
+    printf("Enter width of Rectangle");
+    scanf("%f", &width);
+
+    area = length * width;
+    printf("Area of Rectangle : %f\n", area);
+
+    perimeter = 2*(length + width);
+ printf("Perimeter of Rectangle : %f\n", perimeter);
+
+
+}
+
+
+
